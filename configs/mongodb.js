@@ -1,5 +1,8 @@
 export default {
-   username: 'insert_db_username_here',
-   password: 'insert_db_password_here',
-   mongoUri: 'insert_db_uri_here'
+   username: 'db_username_here',
+   password: 'db_password_here',
+   mongoURL: `db_url_here`,
+   get mongoURI () {
+      return `mongodb://${this.username}:${this.password}@${this.mongoURL}`
+   }
 }
