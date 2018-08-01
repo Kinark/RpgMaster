@@ -1,0 +1,12 @@
+{
+  "name": "RpgMaster",
+  "version": "1.0.0",
+  "description": "An RPG bot for Telegram",
+  "main": "index.js",
+  "repository": "https://github.com/Kinark/RpgMaster.git",
+  "author": "Kinark",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
