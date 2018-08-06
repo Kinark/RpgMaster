@@ -30,14 +30,12 @@ export default (bot, chatInfo, match) => {
          row = [];
       }
 
-
       const opts = {
          parse_mode: 'HTML',
          reply_markup: JSON.stringify({
             inline_keyboard: rpgButtons
          })
       };
-
 
       return bot.sendMessage(chatId, outputs.chooseRpgForLogin, opts);
    })
@@ -50,8 +48,6 @@ bot.on('callback_query', function onCallbackQuery(callbackQuery) {
    const msg = callbackQuery.message;
    const masterId = callbackQuery.from.id
    const rpgId = action[1]
-
-   console.log(masterId)
 
    if (action[0] !== 'login') return;
 
