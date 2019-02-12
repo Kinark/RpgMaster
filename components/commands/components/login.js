@@ -7,9 +7,7 @@ export default (bot, chatInfo, match) => {
    const chatId = chatInfo.chat.id;
    const masterId = chatInfo.from.id;
 
-   if (match.length > 0) {
-      return bot.sendMessage(chatId, outputs.rpgChosen('Middlearth'), { parse_mode: 'HTML' });
-   }
+   if (match.length > 0) return bot.sendMessage(chatId, outputs.rpgChosen('Middlearth'), { parse_mode: 'HTML' });
 
    Rpg.find({ owner: masterId }, (err, rpgs) => {
       if (err) return console.error(err);
@@ -68,4 +66,8 @@ bot.on('callback_query', function onCallbackQuery(callbackQuery) {
       bot.editMessageText(editText, opts);
    })
 
+});
+
+bot.on('polling_error', (error) => {
+   console.log(error);  // => 'EFATAL'
 });

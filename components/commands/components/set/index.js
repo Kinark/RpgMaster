@@ -8,6 +8,10 @@ export default (bot, chatInfo, match) => {
 
    const availableCommands = { sheetmodel }
 
+   if(args.length == 0) {
+      return bot.sendMessage(chatId, outputs.chooseRpgForLogin, opts);
+   }
+
    if (Object.keys(availableCommands).includes(command)) {
       availableCommands[command](bot, chatInfo, args)
    } else {
